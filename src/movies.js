@@ -1,21 +1,13 @@
 // Iteration 1: All directors? - Get the array of all directors.
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
 // How could you "clean" a bit this array and make it unified (without duplicates)?
-
 function getAllDirectors(moviesArray) {
-    let sum = [];
-        moviesArray.forEach(elem => sum.push(elem.director))
-    return sum;
+    let DirectorArray = [];
+        moviesArray.forEach(elem => DirectorArray.push(elem.director))
+    return DirectorArray;
 }
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-/* function howManyMovies(moviesArray) {
-    const count = moviesArray.filter((elem) =>
-        elem.director === 'Steven Spielberg' && elem.genre.includes('Drama')
-    );
-    return count.length;
-  } */
-
 function howManyMovies(moviesArray) {
     const total = moviesArray.filter(elem => elem.director === 'Steven Spielberg' && elem.genre.includes('Drama'))
     return total.length
@@ -50,7 +42,16 @@ function dramaMoviesScore(moviesArray) {
   }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(moviesArray) {}
+function orderByYear(moviesArray) {
+    arr = [];
+        moviesArray.forEach(elem => {
+            arr.push(elem)
+        })
+        arr.sort((a, b) => {
+          return a.year - b.year
+        })
+    return arr;
+  }
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically(moviesArray) {}
