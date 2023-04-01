@@ -66,26 +66,11 @@ function orderByYear(moviesArray) {
 function orderAlphabetically(moviesArray) {
   arr = [];
     moviesArray.forEach(element => {
-      arr.push(element)
+      arr.push(element.title)
     })
-    arr.sort((a, b) => {
-      if (a.title < b.title) {
-        return -1;
-      }
-      else if (a.title > b.title) {
-        return 1;
-      }
-      else {
-        return 0;
-      }
-    })
-    let newArr = []
-    arr.forEach(element => {
-      if (newArr.length < 20) {
-        newArr.push(element.title);
-      }
-    })
-  return newArr;
+  arr.sort((a, b) => a.localeCompare(b))
+    console.log(arr)
+  return arr.slice(0, 20);
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
